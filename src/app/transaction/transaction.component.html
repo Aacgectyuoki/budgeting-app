@@ -1,0 +1,36 @@
+<!-- transaction.component.html -->
+<div>
+    <!-- Display transactions in a table -->
+    <table>
+      <!-- Table headers -->
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!-- Table rows -->
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.description }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.date }}</td>
+          <td>
+            <button (click)="editTransaction(transaction)">Edit</button>
+            <button (click)="deleteTransaction(transaction.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Add or edit transaction form -->
+    <form (submit)="addTransaction()" (ngSubmit)="updateTransaction()">
+      <input type="text" [(ngModel)]="selectedTransaction.description" placeholder="Description" required>
+      <input type="number" [(ngModel)]="selectedTransaction.amount" placeholder="Amount" required>
+      <input type="date" [(ngModel)]="selectedTransaction.date" required>
+      <button type="submit">Add / Update Transaction</button>
+    </form>
+  </div>
+  
