@@ -1,10 +1,19 @@
 <header>
-  <h1>My Budgeting App</h1>
+  <h1 class="app-title">My Budgeting App</h1>
+  <br>
   <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/transactions">Transactions</a>
-    <a routerLink="/add-transaction">Budget Form</a> <!-- Add the Budget Form link -->
-    <!-- Add other navigation links as needed -->
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transactions">Transactions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-transaction">Add Transaction</a>
+      </li>
+      <!-- Add more navigation links as needed -->
+    </ul>
   </nav>
 </header>
 
@@ -15,3 +24,4 @@
 <footer>
   <p>&copy; 2023 My Budgeting App</p>
 </footer>
+

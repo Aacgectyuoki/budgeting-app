@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaction } from '../transaction.model';
 import { TransactionService } from '../transaction.service';
+import { BudgetFormComponent } from '../budget-form/budget-form.component';
 
 @Component({
   selector: 'app-transaction',
@@ -20,6 +21,7 @@ export class TransactionComponent implements OnInit {
   fetchTransactions() {
     this.transactionService.getAllTransactions().subscribe((data) => {
       this.transactions = data;
+      console.log(this.transactions);
     });
   }
 

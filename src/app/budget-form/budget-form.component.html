@@ -1,6 +1,7 @@
 <form (submit)="onSubmit()">
     <input type="text" [(ngModel)]="transaction.description" name="description" placeholder="Description" required>
     <input type="number" [(ngModel)]="transaction.amount" name="amount" placeholder="Amount" required>
-    <input type="date" [(ngModel)]="transaction.date" name="date" required>
+    <input type="date" [(ngModel)]="transaction.date" name="date" required> <!-- Add ngModel binding for date -->
     <button type="submit">Add Transaction</button>
-</form>
+  </form>
+  

@@ -1,0 +1,17 @@
+/* Center the header text horizontally and place it at the top */
+.header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Place at the top */
+    height: 100vh; /* Set a height to center vertically within the viewport */
+  }
+  
+  /* Style the header title */
+  .app-title {
+    font-family: 'Your Font', sans-serif; /* Replace 'Your Font' with the desired font family */
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: bold; /* Adjust the font weight as needed */
+    color: #333; /* Adjust the text color as needed */
+    /* Add other font styles such as text-decoration, text-transform, etc. */
+  }
+  

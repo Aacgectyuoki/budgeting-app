@@ -1,9 +1,8 @@
-<!-- transaction.component.html -->
 <div>
     <!-- Display transactions in a table -->
-    <table>
+    <table class="table table-striped">
       <!-- Table headers -->
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th>Description</th>
           <th>Amount</th>
@@ -16,21 +15,27 @@
         <tr *ngFor="let transaction of transactions">
           <td>{{ transaction.description }}</td>
           <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.date }}</td>
+          <td>{{ transaction.date | date: 'yyyy-MM-dd' }}</td>
           <td>
-            <button (click)="editTransaction(transaction)">Edit</button>
-            <button (click)="deleteTransaction(transaction.id)">Delete</button>
+            <button class="btn btn-primary" (click)="editTransaction(transaction)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteTransaction(transaction.id)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
-  
+  <br>
     <!-- Add or edit transaction form -->
-    <form (submit)="addTransaction()" (ngSubmit)="updateTransaction()">
+    <!-- <form (submit)="addTransaction()" (ngSubmit)="updateTransaction()">
       <input type="text" [(ngModel)]="selectedTransaction.description" placeholder="Description" required>
       <input type="number" [(ngModel)]="selectedTransaction.amount" placeholder="Amount" required>
       <input type="date" [(ngModel)]="selectedTransaction.date" required>
       <button type="submit">Add / Update Transaction</button>
-    </form>
+    </form> -->
+    <form (submit)="addTransaction()" (ngSubmit)="updateTransaction()" *ngFor="let transaction of transactions">
+        <input type="text" [(ngModel)]="transaction.description" placeholder="Description" required>
+        <input type="number" [(ngModel)]="transaction.amount" placeholder="Amount" required>
+        <input type="date" [(ngModel)]="transaction.date" required>
+        <button type="submit">Add / Update Transaction</button>
+      </form>
   </div>
   
